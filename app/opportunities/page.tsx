@@ -43,11 +43,11 @@ export default function OpportunitiesPage() {
           </div>
 
           <Link
-            href="/admin/import"
+            href="/opportunities/submit"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs transition-colors shrink-0 shadow-sm"
           >
             <PlusCircle className="w-4 h-4" />
-            <span>Post an Opportunity</span>
+            <span>Submit an Opportunity</span>
           </Link>
         </div>
 
@@ -74,7 +74,7 @@ export default function OpportunitiesPage() {
                 onChange={(e) => setSelectedTown(e.target.value)}
                 className="w-full text-xs sm:text-sm bg-transparent focus:outline-none text-stone-700"
               >
-                <option value="">All Essex Locations</option>
+                <option value="">All 14 Essex Districts</option>
                 {ESSEX_TOWNS.map((town) => (
                   <option key={town.name} value={town.name}>
                     {town.name}

@@ -41,15 +41,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Pillars */}
+          {/* Pillars & Governance */}
           <div>
             <h4 className="text-sm font-semibold text-white tracking-wider uppercase mb-3">
-              Platform Pillars
+              Explore & About
             </h4>
             <ul className="space-y-1.5 text-xs text-stone-400">
               <li><Link href="/directory" className="hover:text-white transition-colors">Curated Business Directory</Link></li>
               <li><Link href="/mentorship" className="hover:text-white transition-colors">Mentorship Programme</Link></li>
               <li><Link href="/opportunities" className="hover:text-white transition-colors">Jobs & Apprenticeships</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us & Verification Standards</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition-colors">UK GDPR Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -70,17 +72,19 @@ export default function Footer() {
 
         {/* Bottom Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-3">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <p>&copy; {new Date().getFullYear()} Women&apos;s Business NETwork. All rights reserved.</p>
             <span>&bull;</span>
-            <Link href="/admin" className="text-stone-500 hover:text-stone-300 transition-colors">
-              Admin Portal
+            <Link href="/privacy" className="hover:text-stone-300 transition-colors">
+              Privacy Policy
+            </Link>
+            <span>&bull;</span>
+            <Link href="/about" className="hover:text-stone-300 transition-colors">
+              About
             </Link>
           </div>
-          <div className="flex items-center gap-1">
-            <span>Built with</span>
-            <Heart className="w-3.5 h-3.5 text-brand-500 fill-brand-500" />
-            <span>for female founders across Essex</span>
+          <div className="text-stone-400">
+            Built with care for female founders, mentors, and apprentices across Essex.
           </div>
         </div>
       </div>

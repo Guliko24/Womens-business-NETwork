@@ -111,13 +111,12 @@ export default function AdminPortalPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Default admin pass code
-    if (password === 'admin123' || password === 'admin' || password === 'wbn2026') {
+    if (password === 'admin123' || password === 'wbn2026' || password === process.env.NEXT_PUBLIC_ADMIN_KEY) {
       setIsAuthenticated(true);
       sessionStorage.setItem('wbn_admin_auth', 'true');
       setLoginError('');
     } else {
-      setLoginError('Incorrect password. Default access password is: admin123');
+      setLoginError('Invalid administrator credentials.');
     }
   };
 
@@ -345,7 +344,7 @@ export default function AdminPortalPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password (default: admin123)"
+                placeholder="Enter administrator password"
                 className="w-full text-xs px-3.5 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-500"
               />
             </div>
@@ -360,13 +359,13 @@ export default function AdminPortalPage() {
               type="submit"
               className="w-full py-2.5 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-xs rounded-xl transition-all shadow-sm"
             >
-              Log In to Admin
+              Sign In
             </button>
           </form>
 
           <div className="mt-6 pt-5 border-t border-stone-100 flex items-center justify-between text-[11px] text-stone-400">
-            <span>Passcode: <code className="text-stone-700 font-mono">admin123</code></span>
-            <Link href="/" className="text-brand-600 hover:underline">
+            <span>Restricted Access &bull; Authorised Personnel Only</span>
+            <Link href="/" className="text-brand-600 hover:underline font-medium">
               Return to Website &rarr;
             </Link>
           </div>

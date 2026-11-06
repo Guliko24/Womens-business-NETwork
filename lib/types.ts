@@ -19,6 +19,7 @@ export interface Business {
   has_jobs: boolean;
   job_titles?: string[];
   image_url?: string;
+  is_sample?: boolean;
 }
 
 export interface Category {

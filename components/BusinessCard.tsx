@@ -27,9 +27,16 @@ export default function BusinessCard({ business, onClaimClick }: BusinessCardPro
         )}
 
         {/* Category Pill */}
-        <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-stone-800 text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
-          {business.category}
-        </span>
+        <div className="absolute top-3 left-3 flex flex-col gap-1 items-start">
+          <span className="bg-white/90 backdrop-blur text-stone-800 text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+            {business.category}
+          </span>
+          {business.is_sample && (
+            <span className="bg-stone-900/85 backdrop-blur text-stone-200 text-[10px] font-medium px-2 py-0.5 rounded-full shadow-sm border border-stone-700">
+              Example listing
+            </span>
+          )}
+        </div>
 
         {/* Unclaimed Pill */}
         {!business.is_claimed && (
@@ -53,9 +60,12 @@ export default function BusinessCard({ business, onClaimClick }: BusinessCardPro
             </span>
 
             {business.is_verified && (
-              <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
+              <span 
+                className="inline-flex items-center gap-1 text-emerald-700 font-medium text-[11px]"
+                title="Verified standard: >=51% female ownership or female founder-led in Essex"
+              >
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                Verified
+                {business.is_sample ? 'Verified standard' : 'Verified'}
               </span>
             )}
           </div>

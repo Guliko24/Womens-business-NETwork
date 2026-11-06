@@ -37,6 +37,9 @@ export default function Navbar() {
             <Link href="/opportunities" className="hover:text-brand-600 transition-colors">
               Jobs & Apprenticeships
             </Link>
+            <Link href="/about" className="hover:text-brand-600 transition-colors">
+              About
+            </Link>
           </nav>
 
           {/* Action Button */}
@@ -87,6 +90,13 @@ export default function Navbar() {
             className="block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50"
           >
             Jobs & Apprenticeships
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50"
+          >
+            About & Contact
           </Link>
         </div>
       )}

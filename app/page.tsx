@@ -27,11 +27,11 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-stone-900 tracking-tight max-w-4xl mx-auto leading-tight sm:leading-none mb-6">
-            Empowering, Connecting & Scaling <span className="text-brand-600">Women&apos;s Business NETwork</span>
+            Helping Essex Women-Led Businesses <span className="text-brand-600">Get Found, Mentored and Growing</span>
           </h1>
 
           <p className="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Discover exceptional women-led businesses, access local mentorship, and explore high-potential apprenticeships across Chelmsford, Colchester, Southend, and every corner of Essex.
+            Connecting female founders, established leaders, mentors, and emerging talent across all 14 Essex districts — from Chelmsford and Colchester to Southend, Brentwood, and beyond.
           </p>
 
           {/* Quick Search Box */}
@@ -54,7 +54,7 @@ export default function HomePage() {
                 onChange={(e) => setSelectedTown(e.target.value)}
                 className="w-full text-xs sm:text-sm bg-transparent focus:outline-none text-stone-700"
               >
-                <option value="">All Essex Locations</option>
+                <option value="">All 14 Essex Districts</option>
                 {ESSEX_TOWNS.map((town) => (
                   <option key={town.name} value={town.name}>
                     {town.name}
@@ -79,16 +79,16 @@ export default function HomePage() {
               <p className="text-xs text-stone-500 font-medium">Essex Districts</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-brand-600">100%</p>
-              <p className="text-xs text-stone-500 font-medium">Female Founded</p>
+              <p className="text-2xl font-bold text-brand-600">&ge;51%</p>
+              <p className="text-xs text-stone-500 font-medium">Female-Led Standard</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-stone-900">1:1</p>
-              <p className="text-xs text-stone-500 font-medium">Peer Mentorship</p>
+              <p className="text-xs text-stone-500 font-medium">Peer Mentorship Focus</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-stone-900">Free</p>
-              <p className="text-xs text-stone-500 font-medium">Founding Directory</p>
+              <p className="text-xs text-stone-500 font-medium">Founding Profiles</p>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function HomePage() {
                 Featured Essex Businesses
               </h2>
               <p className="text-xs sm:text-sm text-stone-500 mt-1">
-                Curated female-led enterprises thriving in our towns and villages.
+                Curated female-led enterprises (example preview listings shown during founding launch).
               </p>
             </div>
             <Link
@@ -211,10 +211,10 @@ export default function HomePage() {
                 Browse Current Openings
               </Link>
               <Link
-                href="/admin/import"
+                href="/opportunities/submit"
                 className="px-6 py-3 rounded-xl bg-brand-600 text-white font-bold text-xs sm:text-sm hover:bg-brand-700 text-center transition-colors"
               >
-                Post an Opportunity
+                Submit an Opportunity
               </Link>
             </div>
           </div>
@@ -233,13 +233,13 @@ export default function HomePage() {
           <p className="text-xs sm:text-sm text-stone-600 max-w-xl mx-auto mb-6 leading-relaxed">
             We are designing our first in-person Essex networking meetups and practical business clinics. Take our 3-minute community survey to tell us what topics and locations matter most to you.
           </p>
-          <a
-            href="file:///c:/Users/Dell/Documents/Agy2_Projects/WomensBusinessNETwork/Essex_Women_in_Business_Community_Survey.md"
+          <Link
+            href="/survey"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition-all"
           >
-            <span>View Community Survey Questions</span>
+            <span>Take the 3-Minute Community Survey</span>
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </section>
 

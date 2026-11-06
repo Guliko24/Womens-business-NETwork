@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { Search, MapPin, Filter, X, Award, GraduationCap, ShieldCheck } from 'lucide-react';
 import { MOCK_BUSINESSES, CATEGORIES, ESSEX_TOWNS } from '@/lib/data';
 import BusinessCard from '@/components/BusinessCard';
@@ -81,7 +82,7 @@ export default function DirectoryPage() {
                 onChange={(e) => setSelectedTown(e.target.value)}
                 className="w-full text-xs sm:text-sm bg-transparent focus:outline-none text-stone-700"
               >
-                <option value="">All Essex Towns</option>
+                <option value="">All 14 Essex Districts</option>
                 {ESSEX_TOWNS.map((town) => (
                   <option key={town.name} value={town.name}>
                     {town.name} ({town.district})
@@ -150,6 +151,24 @@ export default function DirectoryPage() {
               Showing {filteredBusinesses.length} {filteredBusinesses.length === 1 ? 'business' : 'businesses'}
             </span>
           </div>
+        </div>
+
+        {/* Founding Phase Notice Banner */}
+        <div className="bg-amber-50/90 border border-amber-200 rounded-2xl p-4 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-amber-900 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <span className="font-bold bg-amber-200/80 text-amber-900 px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wide w-fit">
+              Founding Phase Notice
+            </span>
+            <span>
+              Listings tagged <strong>&quot;Example listing&quot;</strong> are illustrative placeholders to demonstrate directory layout. Real Essex female business owners are invited to join.
+            </span>
+          </div>
+          <Link
+            href="/about"
+            className="text-brand-700 hover:text-brand-900 font-semibold underline shrink-0"
+          >
+            How Verification Works &rarr;
+          </Link>
         </div>
 
         {/* Business Grid */}

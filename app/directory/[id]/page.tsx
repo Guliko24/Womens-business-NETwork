@@ -108,6 +108,19 @@ export default function BusinessDetailPage() {
             </div>
           </div>
 
+          {/* Sample Listing Notice Bar */}
+          {business.is_sample && (
+            <div className="bg-stone-100 border-b border-stone-200 px-6 py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-stone-600">
+              <span className="flex items-center gap-1.5">
+                <span className="font-semibold text-stone-800">Example Listing:</span>
+                This profile is an illustrative placeholder created during our founding launch.
+              </span>
+              <Link href="/about" className="text-brand-600 hover:underline font-semibold shrink-0">
+                Learn How Verification Works &rarr;
+              </Link>
+            </div>
+          )}
+
           {/* Unclaimed Notice Bar if applicable */}
           {!business.is_claimed && (
             <div className="bg-amber-50 border-b border-amber-200 px-6 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
