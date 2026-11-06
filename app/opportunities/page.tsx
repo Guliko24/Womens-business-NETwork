@@ -101,16 +101,37 @@ export default function OpportunitiesPage() {
           </div>
         </div>
 
+        {/* High-visibility Sample Banner */}
+        <div className="bg-amber-100/90 border-2 border-amber-300 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-amber-950 shadow-sm">
+          <div className="flex items-start sm:items-center gap-3">
+            <span className="bg-amber-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded uppercase tracking-wider shrink-0 mt-0.5 sm:mt-0">
+              Notice: Sample Data
+            </span>
+            <p className="leading-relaxed">
+              The apprenticeship and job postings shown below are <strong>illustrative examples</strong> to demonstrate board layout. Real Essex businesses can submit openings using the button above.
+            </p>
+          </div>
+          <Link
+            href="/opportunities/submit"
+            className="underline font-bold text-amber-900 hover:text-black shrink-0 whitespace-nowrap"
+          >
+            Submit an Opening &rarr;
+          </Link>
+        </div>
+
         {/* Listings List */}
         <div className="space-y-4">
           {filteredJobs.length > 0 ? (
             filteredJobs.map((job) => (
               <div
                 key={job.id}
-                className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm hover:border-brand-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+                className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm hover:border-brand-300 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative overflow-hidden"
               >
                 <div className="space-y-2 max-w-2xl">
                   <div className="flex flex-wrap items-center gap-2">
+                    <span className="bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      Demo Sample
+                    </span>
                     <span
                       className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
                         job.job_type === 'Apprenticeship'

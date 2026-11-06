@@ -90,14 +90,37 @@ export default function MentorshipPage() {
               </div>
             </div>
 
+            {/* High-visibility Sample Banner */}
+            <div className="bg-amber-100/90 border-2 border-amber-300 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-amber-950 shadow-sm">
+              <div className="flex items-start sm:items-center gap-3">
+                <span className="bg-amber-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded uppercase tracking-wider shrink-0 mt-0.5 sm:mt-0">
+                  Notice: Sample Data
+                </span>
+                <p className="leading-relaxed">
+                  The mentor profiles shown below are <strong>illustrative examples</strong> to demonstrate how mentor expertise will be displayed. Apply using the tab above to participate as a real mentor or mentee.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  setActiveTab('apply');
+                }}
+                className="underline font-bold text-amber-900 hover:text-black shrink-0 whitespace-nowrap"
+              >
+                Apply to Mentor &rarr;
+              </button>
+            </div>
+
             {/* Mentors Grid */}
-            <h2 className="text-xl font-bold text-stone-900 mb-6">Featured Mentors in Essex</h2>
+            <h2 className="text-xl font-bold text-stone-900 mb-6">Preview: Example Mentors in Essex</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {MOCK_MENTORS.map((m) => (
                 <div
                   key={m.id}
-                  className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm flex flex-col justify-between hover:border-brand-300 transition-all"
+                  className="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm flex flex-col justify-between hover:border-brand-300 transition-all relative overflow-hidden"
                 >
+                  <div className="absolute top-0 right-0 bg-amber-500 text-white text-[9px] font-bold px-3 py-0.5 rounded-bl-lg uppercase tracking-wider">
+                    Demo Sample
+                  </div>
                   <div>
                     <div className="flex items-center gap-4 mb-4">
                       {/* eslint-disable-next-line @next/next/no-img-element */}

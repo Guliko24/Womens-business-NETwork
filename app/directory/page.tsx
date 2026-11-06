@@ -153,19 +153,19 @@ export default function DirectoryPage() {
           </div>
         </div>
 
-        {/* Founding Phase Notice Banner */}
-        <div className="bg-amber-50/90 border border-amber-200 rounded-2xl p-4 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-amber-900 shadow-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-            <span className="font-bold bg-amber-200/80 text-amber-900 px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wide w-fit">
-              Founding Phase Notice
+        {/* High-Visibility Sample Notice Banner */}
+        <div className="bg-amber-100/90 border-2 border-amber-300 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-amber-950 shadow-sm">
+          <div className="flex items-start sm:items-center gap-3">
+            <span className="bg-amber-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded uppercase tracking-wider shrink-0 mt-0.5 sm:mt-0">
+              Notice: Sample Data
             </span>
-            <span>
-              Listings tagged <strong>&quot;Example listing&quot;</strong> are illustrative placeholders to demonstrate directory layout. Real Essex female business owners are invited to join.
-            </span>
+            <p className="leading-relaxed">
+              Every listing tagged <strong>&quot;Sample (Unverified)&quot;</strong> is an illustrative preview placeholder. They do not represent real verified members. Real Essex female founders can claim a listing or submit their business details.
+            </p>
           </div>
           <Link
             href="/about"
-            className="text-brand-700 hover:text-brand-900 font-semibold underline shrink-0"
+            className="underline font-bold text-amber-900 hover:text-black shrink-0 whitespace-nowrap"
           >
             How Verification Works &rarr;
           </Link>

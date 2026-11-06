@@ -152,25 +152,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. FEATURED ESSEX BUSINESSES */}
+      {/* 3. FEATURED ESSEX BUSINESSES (SAMPLE PROFILES) */}
       <section className="py-16 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-4">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
             <div>
-              <span className="text-xs font-bold text-brand-600 uppercase tracking-wider">Local Spotlight</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 mt-1">
-                Featured Essex Businesses
+              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider bg-amber-100 px-2.5 py-0.5 rounded-full border border-amber-200">
+                Demonstration Preview
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 mt-2">
+                Example Directory Listings
               </h2>
               <p className="text-xs sm:text-sm text-stone-500 mt-1">
-                Curated female-led enterprises (example preview listings shown during founding launch).
+                Illustrative sample profiles demonstrating how verified female-led businesses will be showcased.
               </p>
             </div>
             <Link
               href="/directory"
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-brand-600 hover:text-brand-800"
             >
-              <span>View all businesses</span>
+              <span>View Directory Layout</span>
               <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* High-visibility Sample Banner */}
+          <div className="bg-amber-100/90 border-2 border-amber-300 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-amber-950 shadow-sm">
+            <div className="flex items-start sm:items-center gap-3">
+              <span className="bg-amber-600 text-white font-extrabold text-[10px] px-2.5 py-1 rounded uppercase tracking-wider shrink-0 mt-0.5 sm:mt-0">
+                Notice: Sample Data
+              </span>
+              <p className="leading-relaxed">
+                The profiles displayed below are <strong>illustrative demonstration samples</strong>. They do not represent active verified companies. Real Essex female business owners are invited to claim their listing or join as founding members.
+              </p>
+            </div>
+            <Link
+              href="/about#verification"
+              className="underline font-bold text-amber-900 hover:text-black shrink-0 whitespace-nowrap"
+            >
+              How Verification Works &rarr;
             </Link>
           </div>
 

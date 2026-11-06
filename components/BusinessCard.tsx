@@ -10,7 +10,14 @@ interface BusinessCardProps {
 
 export default function BusinessCard({ business, onClaimClick }: BusinessCardProps) {
   return (
-    <div className="bg-white rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-brand-300 transition-all flex flex-col overflow-hidden group">
+    <div className="bg-white rounded-2xl border border-stone-200 shadow-sm hover:shadow-md hover:border-brand-300 transition-all flex flex-col overflow-hidden group relative">
+      {/* Sample Banner across top of card */}
+      {business.is_sample && (
+        <div className="bg-amber-500 text-white text-[10px] font-extrabold uppercase tracking-wider py-1 text-center shadow-inner">
+          Sample Demonstration Profile
+        </div>
+      )}
+
       {/* Top Banner / Image */}
       <div className="relative h-44 w-full bg-stone-100 overflow-hidden">
         {business.image_url ? (
@@ -28,12 +35,12 @@ export default function BusinessCard({ business, onClaimClick }: BusinessCardPro
 
         {/* Category Pill */}
         <div className="absolute top-3 left-3 flex flex-col gap-1 items-start">
-          <span className="bg-white/90 backdrop-blur text-stone-800 text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
+          <span className="bg-white/95 backdrop-blur text-stone-800 text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
             {business.category}
           </span>
           {business.is_sample && (
-            <span className="bg-stone-900/85 backdrop-blur text-stone-200 text-[10px] font-medium px-2 py-0.5 rounded-full shadow-sm border border-stone-700">
-              Example listing
+            <span className="bg-amber-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+              Demo Example
             </span>
           )}
         </div>
@@ -59,15 +66,19 @@ export default function BusinessCard({ business, onClaimClick }: BusinessCardPro
               {business.town}, Essex
             </span>
 
-            {business.is_verified && (
+            {business.is_sample ? (
               <span 
-                className="inline-flex items-center gap-1 text-emerald-700 font-medium text-[11px]"
-                title="Verified standard: >=51% female ownership or female founder-led in Essex"
+                className="inline-flex items-center gap-1 text-amber-700 font-bold text-[10px] bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md"
+                title="Illustrative example profile"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                {business.is_sample ? 'Verified standard' : 'Verified'}
+                Sample (Unverified)
               </span>
-            )}
+            ) : business.is_verified ? (
+              <span className="inline-flex items-center gap-1 text-emerald-700 font-medium text-[11px]">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                Verified
+              </span>
+            ) : null}
           </div>
 
           {/* Business Title */}
